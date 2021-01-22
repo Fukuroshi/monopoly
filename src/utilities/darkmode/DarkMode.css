@@ -1,5 +1,6 @@
 #darkMode {
     background: transparent url('./moon.png') no-repeat center;
+    opacity: 0.8;
     background-size: 30px 30px;
     width: 45px;
     height: 45px;
