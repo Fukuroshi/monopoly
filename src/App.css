@@ -22,6 +22,10 @@ html, body, body > div, .app {
   height: 100%;
 }
 
+#players {
+  text-align: center;
+}
+
 body.light {
 
   --nav-bg-color: var(--lgray);
