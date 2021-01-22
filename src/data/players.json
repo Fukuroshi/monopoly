@@ -1,0 +1,24 @@
+{
+    "players": [
+        {
+            "id": 1,
+            "bank": 20000,
+            "penalty": 0
+        },
+        {
+            "id": 2,
+            "bank": 20000,
+            "penalty": 0
+        },
+        {
+            "id": 3,
+            "bank": 20000,
+            "penalty": 0
+        },
+        {
+            "id": 4,
+            "bank": 20000,
+            "penalty": 0
+        }
+    ]
+}
