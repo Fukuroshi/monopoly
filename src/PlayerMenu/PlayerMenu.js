@@ -13,6 +13,7 @@ const PlayerMenu = ({ number }) => {
           bank={x.bank}
           penalty={x.penalty}
           name={x.name}
+          tile={x.tile}
         />
       ))}
     </div>

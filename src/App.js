@@ -49,7 +49,6 @@ const fourplayers = () => {
       <nav>
          <center><h1>Monopoly</h1><DarkMode /></center>
       </nav>
-
         <div id="playerselect">
           <h2>Choose the amount of Players</h2>
           <InputGroup>
