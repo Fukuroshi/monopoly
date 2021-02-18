@@ -5,7 +5,7 @@ this will work someday
 ## done:
 * last player ending turn loops back to first
 * tiles add value to bank
-* game ends on last turn (40)
+* game ends on last turn (40), calls for a restart
 * game saves player's tile and loads it on his turn
 
 ## to do:

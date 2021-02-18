@@ -60,7 +60,7 @@ const fourplayers = () => {
   const endTurn = () => {
     document.getElementById("next").style.visibility = "visible";
     document.getElementById("end").style.visibility = "hidden";
-    if(turnNumber===2 && currentPlayer===playerCount-1)
+    if(turnNumber===40 && currentPlayer===playerCount-1)
     {
       alert("Game finished!");
       document.getElementById("Tile").style.visibility = "hidden";
