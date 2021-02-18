@@ -5,28 +5,28 @@ export const Players = [
             bank: 20000,
             penalty: 0,
             name: "Player 1",
-            tile: 0,
+            tile: 1,
         },
         {
             id: 1,
             bank: 20000,
             penalty: 0,
             name: "Player 2",
-            tile: 0,
+            tile: 1,
         },
         {
             id: 2,
             bank: 20000,
             penalty: 0,
             name: "Player 3",
-            tile: 0,
+            tile: 1,
         },
         {
             id: 3,
             bank: 20000,
             penalty: 0,
             name: "Player 4",
-            tile: 0,
+            tile: 1,
         }
     ];
 
