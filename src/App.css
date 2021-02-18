@@ -121,3 +121,9 @@ p {
   position: absolute;
   visibility: hidden;
 }
+#next {
+  top:40%;
+  right: 5%;
+  position: absolute;
+  visibility: hidden;
+}
