@@ -19,26 +19,31 @@ function App() {
 
 const twoplayers = () => {
   setplayerCount(2);
+  document.getElementById("list").style.visibility = "visible";
   document.getElementById("Tile").style.visibility = "visible";
   document.getElementById("playerselect").style.visibility = "hidden"; 
   document.getElementById("roller").style.visibility = "visible"; 
   };
 const threeplayers = () => {
   setplayerCount(3);
+  document.getElementById("list").style.visibility = "visible";
   document.getElementById("Tile").style.visibility = "visible";
   document.getElementById("playerselect").style.visibility = "hidden"; 
   document.getElementById("roller").style.visibility = "visible"; 
 };
 const fourplayers = () => {
   setplayerCount(4);
+  document.getElementById("list").style.visibility = "visible";
   document.getElementById("Tile").style.visibility = "visible";
   document.getElementById("playerselect").style.visibility = "hidden"; 
   document.getElementById("roller").style.visibility = "visible"; 
 };
 
   const Roll = () => {
+    document.getElementById("roller").style.visibility = "hidden";
+    document.getElementById("end").style.visibility = "visible";  
     var number = 1+Math.floor(Math.random() * 6);
-    Players[currentPlayer].bank=Players[currentPlayer].bank+Tile.[current].value;
+    Players[currentPlayer].bank=Players[currentPlayer].bank+Tile[current].value;
     if(number+current>40)
     {
       setCurrent((number+current)-40);
@@ -50,14 +55,18 @@ const fourplayers = () => {
       Players[currentPlayer].tile=number+current;
     }
     alert("You've rolled "+number);
-    document.getElementById("roller").style.visibility = "hidden";
-    document.getElementById("end").style.visibility = "visible";  
   }
 
   const endTurn = () => {
-    if(turnNumber===40 && currentPlayer===playerCount-1)
+    document.getElementById("next").style.visibility = "visible";
+    document.getElementById("end").style.visibility = "hidden";
+    if(turnNumber===2 && currentPlayer===playerCount-1)
     {
       alert("Game finished!");
+      document.getElementById("Tile").style.visibility = "hidden";
+      document.getElementById("playerselect").style.visibility = "hidden";
+      document.getElementById("next").style.visibility = "hidden";
+      document.getElementById("restart").style.visibility = "visible";
     }    
     else if(currentPlayer===playerCount-1)
     {
@@ -68,15 +77,17 @@ const fourplayers = () => {
     else
     {
     setCurrentPlayer(currentPlayer+1);}
-    document.getElementById("next").style.visibility = "visible";
-    document.getElementById("end").style.visibility = "hidden";
+
     }
 
   const nextPlayer = () => {
-    setCurrent(Players[currentPlayer].tile);
-    alert("Turn of "+Players[currentPlayer].name);
     document.getElementById("roller").style.visibility = "visible";
     document.getElementById("next").style.visibility = "hidden";
+    setCurrent(Players[currentPlayer].tile);
+    alert("Turn of "+Players[currentPlayer].name);
+  }
+  const restartGame = () => {
+    document.location.reload();
   }
 
 
@@ -96,14 +107,17 @@ const fourplayers = () => {
             </ButtonGroup>
           </InputGroup>
           </div>
+          <div id="list">
           <PlayerMenu number={playerCount}/>
+          </div>
           <div id="Tile">
-            <h1>Turn number: {turnNumber}</h1>
+            <h1>{Players[currentPlayer].name}, turn number: {turnNumber}</h1>
           <TileDisplay number={current}/>
           </div>
           <Button id="roller" onClick={Roll}>Roll</Button>
           <Button id="end" onClick={endTurn}>End turn</Button>
           <Button id="next" onClick={nextPlayer}>Next player</Button>
+          <Button id="restart" onClick={restartGame}>Restart</Button>
       </div>
 
   );

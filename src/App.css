@@ -133,3 +133,12 @@ p {
   position: absolute;
   visibility: hidden;
 }
+#restart {
+  top:50%;
+  right: 45%;
+  position: absolute;
+  visibility: hidden;
+}
+#list {
+  visibility: hidden;
+}
