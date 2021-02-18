@@ -2,4 +2,7 @@
 this will work someday
 ### now it doesn't
 
-![i'm trying to stay sane](https://github.com/Fukuroshi/monopoly/blob/master/real.gif?raw=true)
+## to do:
+* make next player work (goes to player 2, fails to loop back to player 1)
+* make tile display not break on player 2
+* everything else
