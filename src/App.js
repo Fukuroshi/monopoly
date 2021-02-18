@@ -55,7 +55,7 @@ const fourplayers = () => {
   }
 
   const endTurn = () => {
-    if(turnNumber===5 && currentPlayer===playerCount-1)
+    if(turnNumber===40 && currentPlayer===playerCount-1)
     {
       alert("Game finished!");
     }    
