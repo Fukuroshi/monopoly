@@ -10,6 +10,10 @@
   --dgray: rgb(75, 75, 75);
 }
 
+body {
+  background-color: var(--background-color) !important;
+}
+
 .app {
   font-family: "Ubuntu", sans-serif;
   background: var(--background-color);
@@ -22,7 +26,7 @@ html, body, body > div, .app {
   height: 100%;
 }
 
-#players {
+#Players {
   text-align: center;
 }
 
@@ -72,4 +76,89 @@ p {
   width: 40%;
   margin: 1rem auto;
   line-height: 1.6;
+}
+
+.PlayerCard {
+  width: 340px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: var(--nav-bg-color) !important;
+}
+
+.PlayerList {
+  top: 20%;
+  margin-left: 10px;
+  height: 80%;
+  overflow-y: scroll;
+  width:300px;
+  display: flex;
+  position:absolute;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+}
+.PlayerList::-webkit-scrollbar {
+  display: none;
+}
+
+.TileCard {
+  width: 100%;
+  /* margin-top: 20px;
+  margin-bottom: 20px; */
+  background-color: var(--nav-bg-color) !important;
+  line-height: 1.6;
+}
+
+.TileDisplay {
+  right: 15%;
+  width:60%;
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
+  height: 60%;
+}
+
+#currentPlayerText {
+  position: relative;
+}
+
+#Tile {
+  top:20%;
+  height: 70% !important;
+}
+
+#roller {
+  top:30%;
+  right: 5%;
+  position: absolute;
+}
+#end {
+  top:40%;
+  right: 5%;
+  position: absolute;
+  visibility: hidden;
+}
+#next {
+  top:50%;
+  right: 5%;
+  position: absolute;
+  visibility: hidden;
+}
+#restart {
+  top:50%;
+  width: 10%;
+  right: 45%;
+  position: absolute;
+  visibility: hidden;
+}
+#buyTile {
+  bottom: 10%;
+  right: 17%;
+  position: absolute;
+  visibility: hidden;
+}
+#game {
+  visibility: hidden;
 }
