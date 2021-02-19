@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DarkMode from "./utilities/darkmode/DarkMode";
-// import monopoly from './monopoly.js';
 import PlayerMenu from "./PlayerMenu/PlayerMenu";
 import TileDisplay from "./TileDisplay/TileDisplay";
 import { InputGroup,  Button} from "react-bootstrap";
