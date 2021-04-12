@@ -8,6 +8,7 @@ import { InputGroup,  Button} from "react-bootstrap";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Players } from "./data/Players";
 import { Tile } from "./data/Tiles";
+import swal from "sweetalert";
 
 function App() {
 
@@ -50,14 +51,14 @@ const fourplayers = () => {
       setCurrent(number+current);
       Players[currentPlayer].tile=number+current;
     }
-    alert("You've rolled "+number);   
+    swal({title: "You've rolled "+number});  
     document.getElementById("buyTile").style.visibility = "visible";
     }
 
   const Buy = () => {
     if((Tile[current-1].buyable===false) || (Tile[current-1].bought===true))      
     {
-      alert("You can't buy this tile.");
+      swal({title: "You can't buy this tile."});
       document.getElementById("buyTile").style.visibility = "hidden";
     }
     else if(Players[currentPlayer].bank>Tile[current-1].cost)
@@ -67,11 +68,11 @@ const fourplayers = () => {
       Players[currentPlayer].bank=Players[currentPlayer].bank-Tile[current-1].cost;
       document.getElementById("buyTile").style.visibility = "hidden";
 
-      alert("You've bought tile #"+Tile[current-1].id+" - "+Tile[current-1].name);
+      swal({title: "You've bought tile #"+Tile[current-1].id+" - "+Tile[current-1].name});
     }
     else
     {
-      alert("Insufficient money.");
+      swal({title: "Insufficient money."});
       document.getElementById("buyTile").style.visibility = "hidden";
     }
   }
@@ -94,7 +95,7 @@ const fourplayers = () => {
       };
       document.getElementById("game").style.visibility = "hidden";
       document.getElementById("restart").style.visibility = "visible";
-      alert("Game finished, "+winnerName+" wins with "+winner+" in the bank!");
+      swal("Game finished, "+winnerName+" wins!", "With "+winner+" in the bank!");
     }    
     else if(currentPlayer===playerCount-1)
     {
@@ -106,7 +107,7 @@ const fourplayers = () => {
         case 2:
           Players[currentPlayer].tile=11;
           Players[currentPlayer].penalty=2;
-          alert("You've landed in jail!");  
+          swal({title:"You've landed in jail!"});  
           break;
         default:
           break;
@@ -125,7 +126,7 @@ const fourplayers = () => {
         case 2:
           Players[currentPlayer].tile=11;
           Players[currentPlayer].penalty=2;
-          alert("You've landed in jail!");  
+          swal({title: "You've landed in jail!"});  
           break;
         default:
           break;
@@ -142,14 +143,14 @@ const fourplayers = () => {
       document.getElementById("roller").style.visibility = "visible";
       document.getElementById("next").style.visibility = "hidden";
       setCurrent(Players[currentPlayer].tile);
-      alert("Turn of "+Players[currentPlayer].name);
+      swal(Players[currentPlayer].name, "Your turn!");
     }
     else
     {
       Players[currentPlayer].penalty--;
       document.getElementById("end").style.visibility = "visible";
       document.getElementById("next").style.visibility = "hidden";
-      alert(Players[currentPlayer].name+"'s turn was skipped, "+Players[currentPlayer].penalty+" jail turns left.");
+      swal(Players[currentPlayer].name+"'s turn was skipped, ", Players[currentPlayer].penalty+" jail turns left.");
     }
   }
   const restartGame = () => {

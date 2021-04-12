@@ -162,3 +162,20 @@ p {
 #game {
   visibility: hidden;
 }
+
+.swal-modal {
+  background-color: var(--text-color);
+}
+
+.swal-title {
+  color: var(--background-color);
+}
+
+.swal-text {
+  color: var(--background-color);
+}
+
+.swal-button {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
